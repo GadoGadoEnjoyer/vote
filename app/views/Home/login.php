@@ -13,5 +13,6 @@
         <input type="password" id="password" name="password" required><br><br>
         <input type="submit" value="Login">
     </form>
+    <p>No account?<a href="<?php echo BASEURL ?>/Home/register"> Register!</a></p>    
 </body>
 </html>

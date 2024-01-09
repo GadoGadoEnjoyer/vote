@@ -2,8 +2,9 @@
 session_start();
 class Post extends Controller{
     public function index($id = null){
-        $this->isLoggedin();
+        
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $this->isLoggedin();
             $this->rateLimit();
             $option_id = $_POST['option'];
             $option = $this->model('Option_model');
