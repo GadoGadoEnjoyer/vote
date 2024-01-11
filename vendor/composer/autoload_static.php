@@ -22,7 +22,6 @@ class ComposerStaticInitce559b9fbd0e097bccee77e6c3cc8be1
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\Routing\\' => 26,
-            'Symfony\\Component\\Process\\' => 26,
             'Symfony\\Component\\HttpFoundation\\' => 33,
         ),
         'R' => 
@@ -49,10 +48,6 @@ class ComposerStaticInitce559b9fbd0e097bccee77e6c3cc8be1
         array (
             'GuzzleHttp\\Psr7\\' => 16,
         ),
-        'F' => 
-        array (
-            'FreepikLabs\\DomPurify\\' => 22,
-        ),
         'E' => 
         array (
             'Evenement\\' => 10,
@@ -75,10 +70,6 @@ class ComposerStaticInitce559b9fbd0e097bccee77e6c3cc8be1
         'Symfony\\Component\\Routing\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/routing',
-        ),
-        'Symfony\\Component\\Process\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/process',
         ),
         'Symfony\\Component\\HttpFoundation\\' => 
         array (
@@ -132,10 +123,6 @@ class ComposerStaticInitce559b9fbd0e097bccee77e6c3cc8be1
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
-        ),
-        'FreepikLabs\\DomPurify\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/freepik-labs/dom-purify/src',
         ),
         'Evenement\\' => 
         array (
