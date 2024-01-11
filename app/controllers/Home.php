@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 class Home extends Controller{
     public function index(){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){

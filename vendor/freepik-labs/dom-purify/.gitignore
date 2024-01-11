@@ -1,0 +1,6 @@
+vendor/
+.idea/
+*.sublime-workspace
+*.local.*
+composer.lock
+.phpunit.result.cache

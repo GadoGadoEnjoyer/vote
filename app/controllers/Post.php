@@ -1,8 +1,11 @@
 <?php
 session_start();
+use FreepikLabs\DomPurify\Purifier;
+
 class Post extends Controller{
+    
     public function index($id = null){
-        
+        $lol = new Purifier;
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $this->isLoggedin();
             $this->rateLimit();
@@ -44,11 +47,11 @@ class Post extends Controller{
                         $data['img'][$option['id']]['image'] = 'default.jpg';
                     }
                 }
-                $data['comments'] = $this->model('Comment_model')->Read($id);
+                $data['comments'] = $lol->clean($this->model('Comment_model')->Read($id));
 
                 //THANK YOU SO MUCH GPT FOR TELLING ME THAT ADDING & MAKE THE ARRAY EDITABLE INSTEAD OF WHATEVER IT WAS!!!! ALHAMDULILLAH
                 foreach($data['comments'] as &$user){
-                    $user['username'] = $this->model('User_model')->GetName($user['user_id']);
+                    $user['username'] = $lol->clean($this->model('User_model')->GetName($user['user_id']));
                 }
             
                 if($data['posts'] == null){

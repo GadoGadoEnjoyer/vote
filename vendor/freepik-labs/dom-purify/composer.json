@@ -1,0 +1,34 @@
+{
+    "name": "freepik-labs/dom-purify",
+    "description": "A JS DOMPurify wrapper",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "FreepikLabs\\DomPurify\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FreepikLabs\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^7.4|^8.0",
+        "symfony/process": "^5.1 || ^6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.2"
+    },
+    "repositories": [
+	],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freepik Labs",
+            "email": "aprodriguez@freepik.com"
+        }
+    ],
+    "scripts": {
+        "tests": "vendor/bin/phpunit"
+    }
+}

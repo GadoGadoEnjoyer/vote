@@ -7,6 +7,7 @@
     "require": {
         "cboden/ratchet": "^0.4",
         "erusev/parsedown": "^1.7",
-        "phpmailer/phpmailer": "^6.8"
+        "phpmailer/phpmailer": "^6.8",
+        "freepik-labs/dom-purify": "^0.2.5"
     }
 }
