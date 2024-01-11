@@ -44,11 +44,11 @@ class Post extends Controller{
                         $data['img'][$option['id']]['image'] = 'default.jpg';
                     }
                 }
-                $data['comments'] = $this->model('Comment_model')->Read($id);
+                $data['comments'] = htmlspecialchars($this->model('Comment_model')->Read($id), ENT_QUOTES, 'UTF-8');
 
                 //THANK YOU SO MUCH GPT FOR TELLING ME THAT ADDING & MAKE THE ARRAY EDITABLE INSTEAD OF WHATEVER IT WAS!!!! ALHAMDULILLAH
                 foreach($data['comments'] as &$user){
-                    $user['username'] = $this->model('User_model')->GetName($user['user_id']);
+                    $user['username'] = htmlspecialchars($this->model('User_model')->GetName($user['user_id']), ENT_QUOTES, 'UTF-8');
                 }
             
                 if($data['posts'] == null){
