@@ -1,5 +1,8 @@
 <?php
 session_start();
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
 class Post extends Controller{
     public function index($id = null){
         
@@ -11,7 +14,7 @@ class Post extends Controller{
             $record = $this->model('Record_model');
             $comment = $this->model('Comment_model');
             if($_POST['comment'] != null){
-                if($comment->Create($_SESSION['user_id'], $id, $_POST['comment'])){
+                if($comment->Create($_SESSION['user_id'], $id, htmlspecialchars($_POST['comment'], ENT_QUOTES, 'UTF-8'))){
                     header('Location: '.BASEURL.'/Post/index/'.$id);
                     exit();
                 }
@@ -44,11 +47,12 @@ class Post extends Controller{
                         $data['img'][$option['id']]['image'] = 'default.jpg';
                     }
                 }
-                $data['comments'] = htmlspecialchars($this->model('Comment_model')->Read($id), ENT_QUOTES, 'UTF-8');
+                $data['comments'] = $this->model('Comment_model')->Read($id);
 
                 //THANK YOU SO MUCH GPT FOR TELLING ME THAT ADDING & MAKE THE ARRAY EDITABLE INSTEAD OF WHATEVER IT WAS!!!! ALHAMDULILLAH
                 foreach($data['comments'] as &$user){
                     $user['username'] = htmlspecialchars($this->model('User_model')->GetName($user['user_id']), ENT_QUOTES, 'UTF-8');
+                    $user['comment'] = htmlspecialchars($user['comment'], ENT_QUOTES, 'UTF-8');
                 }
             
                 if($data['posts'] == null){
